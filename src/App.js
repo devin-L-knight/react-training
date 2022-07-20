@@ -1,6 +1,7 @@
 // NOTE: With the 
 import logo from './logo.svg';
 import './App.css';
+import Navbar from './Navbar';
 
 function App() {
   const title = 'Welcome to the new React blog'
@@ -24,6 +25,7 @@ function App() {
         </a>
       </header> */}
 
+      <Navbar />
       <div className="content">
         <h1>{title}</h1>
         <p>Liked {likes} times</p>
