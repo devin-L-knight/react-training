@@ -1,7 +1,8 @@
-// NOTE: With the 
+// NOTE: With the latest version of react, we do not need to import React from react like we did previously.
 import logo from './logo.svg';
-import './App.css';
+// import './App.css';
 import Navbar from './Navbar';
+import Home from './Home';
 
 function App() {
   const title = 'Welcome to the new React blog'
@@ -27,10 +28,11 @@ function App() {
 
       <Navbar />
       <div className="content">
-        <h1>{title}</h1>
+        {/* <h1>{title}</h1>
         <p>Liked {likes} times</p>
 
-        <a href={link}>Google Site</a>
+        <a href={link}>Google Site</a> */}
+        <Home />
       </div>
     </div>
   );
