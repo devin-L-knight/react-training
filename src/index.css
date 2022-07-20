@@ -70,3 +70,7 @@ code {
   color: #f1356d;
   margin-bottom: 0.5rem
 }
+
+.blog-preview a {
+  text-decoration: none;
+}
