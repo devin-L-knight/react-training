@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './Navbar';
 import Home from './Home';
 import CreateBlog from './Create';
+import BlogDetails from './BlogDetails';
 
 function App() {
   // const title = 'Welcome to the new React blog'
@@ -40,6 +41,7 @@ function App() {
           <Switch>
             <Route exact path="/"><Home /></Route>
             <Route path="/create"><CreateBlog /></Route>
+            <Route path="/blogs/:id"><BlogDetails /></Route>
           </Switch>
         </div>
       </div>
