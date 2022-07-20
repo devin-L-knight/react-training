@@ -1,5 +1,5 @@
 // NOTE: With the latest version of react, we do not need to import React from react like we did previously.
-import logo from './logo.svg';
+// import logo from './logo.svg';
 // import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
@@ -9,9 +9,9 @@ import Home from './Home';
 import CreateBlog from './Create';
 
 function App() {
-  const title = 'Welcome to the new React blog'
-  const likes = 50;
-  const link = 'http://www.google.com'
+  // const title = 'Welcome to the new React blog'
+  // const likes = 50;
+  // const link = 'http://www.google.com'
 
   return (
     <Router>

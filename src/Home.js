@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'; // imports a react hook. (allows us to update a reactive value that is rendered on the page).
+import { useState } from 'react'; // imports a react hook. (allows us to update a reactive value that is rendered on the page).
 import BlogList from './BlogList';
 import useFetch from './useFetch';
 
@@ -14,8 +14,6 @@ const Home = () => {
         setName('Jimmy')
         setAge(30);
     }
-
-    
 
     return (
         <div className="home">
