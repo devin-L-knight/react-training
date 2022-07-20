@@ -18,13 +18,21 @@ const Home = () => {
         setAge(30);
     }
 
+    const handleDelete = (id) => {
+        // we're going to create a new, filtered array.
+        // This approach means the original state remains unchanged.
+        const newBlogs = blogs.filter(blog => blog.id !== id);;
+
+        setBlogs(newBlogs); // uses a hook via useState to update values of the new array
+    }
+
     return (
         <div className="home">
             <h2>Home Page</h2>
             <p>{ name } is { age } years old.</p>
             <button onClick={handleClick}>Click Me</button>
-            <BlogList blogsEntries={blogs} title="All Blogs!" />
-            <BlogList blogsEntries={blogs.filter((blog) => blog.author === 'Bob')} title="Bob's Blogs:" />
+            <BlogList blogsEntries={blogs} title="All Blogs!" handleDelete={handleDelete}/>
+            <BlogList blogsEntries={blogs.filter((blog) => blog.author === 'Bob')} title="Bob's Blogs:" handleDelete={handleDelete} />
         </div>
     )
 }
