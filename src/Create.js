@@ -5,12 +5,35 @@ const CreateBlog = () => {
     // we need to set-up some state to track the title and data that is entered into our form.
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
-    const [author, setAuthor] = useState('Bob')
+    const [author, setAuthor] = useState('Bob');
+    const [isPending, setIsPending] = useState(false);
+
+    // create an event handle to support actual form submision.
+    const handleSubmit = (evt) => {
+        evt.preventDefault();   // prevent the page from refreshing when clicking submit
+
+        const article = { title, body, author };
+        console.log(article);
+
+        setIsPending(true)
+
+        // create a new fetch request to update the Server (we'll use a POST request for this);
+        setTimeout(() => {
+            fetch('http://localhost:8000/blogs', {
+                method: 'POST',
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(article)
+            }).then(() => {
+                console.log('Article Added!');
+                setIsPending(false);
+            })
+        }, 1000)
+    }
 
     return (
         <div className="create">
-            <h2>Add a New Blog</h2>
-            <form>
+            <h2>Add a New Article</h2>
+            <form onSubmit={handleSubmit}>
                 <label>Blog title: </label>
 
                 <input
@@ -35,11 +58,12 @@ const CreateBlog = () => {
                     <option value="Bob">Bob</option>
                     <option value="Jimmy">Jimmy</option>
                     <option value="Jane">Jane</option>
+                    <option value="Devin">Devin</option>
+                    <option value="Z">Z</option>
+                    <option value="Mochiko">Mochiko</option>
                 </select>
-                <button>Post Article</button>
-                {/* <p>Draft Title:  {title}</p>
-                <p>Selected Author: {author}</p>
-                <p>Draft Text: {body}</p> */}
+                { !isPending && <button>Post Article</button> }
+                { isPending && <button>Publishing Article...</button> }
             </form>
         </div>
     )
