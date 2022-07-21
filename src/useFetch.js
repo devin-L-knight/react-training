@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 
 // This is a custom hook. (always use the 'use' name prefix when creating a custom hook...ex: 'useFetch')
 const useFetch = (url) => {
+    const abortCont = new AbortController();
 
     const [data, setData] = useState(null);
     const [isPending, setisPending] = useState(true);
@@ -12,7 +13,7 @@ const useFetch = (url) => {
         setTimeout(() => {
 
             // we make a fetch request to our DB here for our local host (the port where the data is being served)
-            fetch(url)
+            fetch(url, { signal: abortCont.signal })
                 .then( res => {
                     // console.log(res);
                     if (!res.ok) {
@@ -28,15 +29,17 @@ const useFetch = (url) => {
                     setError(null);
                 })
                 .catch( error => {
-                    setError(error.message);  // update our state to include the error message
-                    setisPending(false);    // updates the pending message state to be false
-
-                    // here we'll console out any kind of network error
-                    console.log(error.message);
+                    if (error.name === 'AbortError') {
+                        console.log('fetch aborted.')
+                    } else {
+                        setError(error.message);  // update our state to include the error message
+                        setisPending(false);    // updates the pending message state to be false
+                    }
                 })
 
-        }, 1500)
+        }, 1200)
 
+        // return () => abortCont.abort(); // This aborts whatever fetch that's in motion that needs to be paused if a user has moved away from a page.
     }, [url]);
 
     return { data, isPending, error }
