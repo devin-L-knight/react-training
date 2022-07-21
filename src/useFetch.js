@@ -37,7 +37,7 @@ const useFetch = (url) => {
                     }
                 })
 
-        }, 1200)
+        }, 600)
 
         // return () => abortCont.abort(); // This aborts whatever fetch that's in motion that needs to be paused if a user has moved away from a page.
     }, [url]);
