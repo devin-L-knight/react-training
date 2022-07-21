@@ -7,7 +7,7 @@ Multiple components were created to build this site (ex: NavBar, Home, NotFoundP
 /components directory and are all routed via React Router to App.js. <br>
 
 To see this page, please pull the code and run ***npm install***. After that, run ***npx json-server --watch data/db.json --port 8000*** to start the mock server and you will be able to 
-add / delete or view articles from the mock database (data/db.json). <br>
+add / delete or view articles from the mock database (data/db.json). <br><br><br>
 
 *(Note: below is additional information related to a basic React App with context about some of the scripts and other boilermaker information).*
 
