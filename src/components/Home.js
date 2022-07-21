@@ -1,6 +1,6 @@
 import { useState } from 'react'; // imports a react hook. (allows us to update a reactive value that is rendered on the page).
 import BlogList from './BlogList';
-import useFetch from './useFetch';
+import useFetch from '../useFetch';
 
 // this is a stateless functional component
 const Home = () => {

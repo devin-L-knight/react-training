@@ -3,11 +3,11 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 // Site Components:
-import Navbar from './Navbar';
-import Home from './Home';
-import CreateBlog from './Create';
-import BlogDetails from './BlogDetails';
-import NotFoundComponent from './NotFoundPage'
+import Navbar from './components/Navbar';
+import Home from './components/Home';
+import CreateBlog from './components/Create';
+import BlogDetails from './components/BlogDetails';
+import NotFoundComponent from './components/NotFoundPage'
 
 function App() {
   // const title = 'Welcome to the new React blog'
