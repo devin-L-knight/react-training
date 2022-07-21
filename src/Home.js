@@ -17,17 +17,20 @@ const Home = () => {
 
     return (
         <div className="home">
-            <h2>Home Page</h2>
-            <p>{ name } is { age } years old.</p>
-            <button onClick={handleClick}>Click Me</button>
+            <div className="test-box">
+                <p>{ name } is { age } years old.</p>
+                <button onClick={handleClick}>Update name & age</button>
+            </div>
 
             { error && <div>{error}</div>}
             { isPending && <div>Loading...</div> }
             { data && <BlogList blogsEntries={data} title="All Blogs!" /> }
 
             {/* <BlogList blogsEntries={blogs.filter((blog) => blog.author === 'Bob')} title="Bob's Blogs:" handleDelete={handleDelete} /> */}
-            <button onClick={() => setName('Jimmy-John')}>change name</button>
-            <p>{ name }</p>
+            <div className="test-box">
+                <button onClick={() => setName('Jimmy-John')}>change name</button>
+                <p>{ name }</p>
+            </div>
         </div>
     )
 }

@@ -54,6 +54,12 @@ code {
   padding: 1.25rem;
 }
 
+.test-box {
+  padding: 16px;
+  border: dotted 1px gray;
+  margin-bottom: 16px;
+}
+
 /* blog previews / lists */
 .blog-preview {
   padding: 0.625rem 1rem;
