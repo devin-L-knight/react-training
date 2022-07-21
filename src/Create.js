@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 const CreateBlog = () => {
 
@@ -7,6 +8,8 @@ const CreateBlog = () => {
     const [body, setBody] = useState('');
     const [author, setAuthor] = useState('Bob');
     const [isPending, setIsPending] = useState(false);
+
+    const history = useHistory();   // invoke the history hook (react router-dom)
 
     // create an event handle to support actual form submision.
     const handleSubmit = (evt) => {
@@ -26,6 +29,7 @@ const CreateBlog = () => {
             }).then(() => {
                 console.log('Article Added!');
                 setIsPending(false);
+                history.push('/');  // this will bring the user back to the home page
             })
         }, 1000)
     }
