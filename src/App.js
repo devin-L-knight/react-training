@@ -8,6 +8,7 @@ import Navbar from './Navbar';
 import Home from './Home';
 import CreateBlog from './Create';
 import BlogDetails from './BlogDetails';
+import NotFoundComponent from './NotFoundPage'
 
 function App() {
   // const title = 'Welcome to the new React blog'
@@ -42,6 +43,7 @@ function App() {
             <Route exact path="/"><Home /></Route>
             <Route path="/create"><CreateBlog /></Route>
             <Route path="/blogs/:id"><BlogDetails /></Route>
+            <Route path="*"><NotFoundComponent /></Route>
           </Switch>
         </div>
       </div>
