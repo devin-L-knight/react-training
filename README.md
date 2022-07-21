@@ -1,3 +1,16 @@
+# Project Overview
+
+This project was a brief training experience to launch a basic React App in the form of a blog site. This app uses a mock database & can update that
+database through fetch calls to get all blog/article entries, view a single blog, create a new article / blog or delete one from the database. <br>
+
+Multiple components were created to build this site (ex: NavBar, Home, NotFoundPage, BlogDetails, BlogList, Create, etc.). The components can be found in the <br>
+/components directory and are all routed via React Router to App.js. <br>
+
+To see this page, please pull the code and run ***npm install***. After that, run ***npx json-server --watch data/db.json --port 8000*** to start the mock server and you will be able to 
+add / delete or view articles from the mock database (data/db.json). <br>
+
+***
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
